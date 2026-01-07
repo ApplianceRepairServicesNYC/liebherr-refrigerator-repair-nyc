@@ -380,16 +380,15 @@
             column-gap: 30px; columns: 3;
         }
         .sa-slide ul li {
-            padding: 16px 15px; margin: 8px 0; border-radius: 10px;
+            padding: 12px 15px; margin: 8px 0; border-radius: 10px;
             background: rgba(240, 244, 255, .9); transition: all .3s ease; cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .08); break-inside: avoid;
             border-left: 3px solid transparent;
         }
         .sa-slide ul li:hover { background: rgba(26, 26, 46, .08); }
         .sa-slide ul li h3 { 
-            margin: 0; font-size: 15px; color: #1a1a2e; font-weight: 600;
+            margin: 0; font-size: 17px; color: #1a1a2e; font-weight: 600;
             display: flex; justify-content: space-between; align-items: center;
-            line-height: 1.4; min-height: 42px;
         }
         .sa-slide ul li h3::after {
             content: '+'; font-size: 16px; color: #1a1a2e; font-weight: 400;
@@ -425,13 +424,7 @@
         }
         .sa-borough-tab:hover, .sa-borough-tab.active { background: var(--blue); color: white; }
         @media (max-width: 768px) { .sa-slide ul { columns: 2; } }
-        @media (max-width: 480px) { 
-            .sa-slide ul { columns: 1; padding: 15px; } 
-            .sa-slide ul li { padding: 14px 15px; }
-            .sa-slide ul li h3 { font-size: 16px; min-height: 24px; }
-            .sa-nav-buttons { gap: 15px; padding: 15px 0; }
-            .sa-nav-btn { padding: 14px 24px; font-size: 15px; border-radius: 25px; }
-        }
+        @media (max-width: 480px) { .sa-slide ul { columns: 1; } }
         /* Trust Badges Section */
         .trust-badges-section { padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
         .trust-badges-section h2 { text-align: center; margin-bottom: 30px; color: var(--blue); font-size: 28px; }
@@ -1817,9 +1810,7 @@
             var totalSlides = 4;
             
             if (saToggleBtn) saToggleBtn.addEventListener('click', function() {
-                var isOpen = saDropdownContent.style.maxHeight && saDropdownContent.style.maxHeight !== '0px';
-                saDropdownContent.style.maxHeight = isOpen ? '0' : '2000px';
-                saDropdownContent.style.overflow = isOpen ? 'hidden' : 'visible';
+                saDropdownContent.style.maxHeight = saDropdownContent.style.maxHeight && saDropdownContent.style.maxHeight !== '0px' ? '0' : '2000px';
             });
             
             function updateSlider() {
