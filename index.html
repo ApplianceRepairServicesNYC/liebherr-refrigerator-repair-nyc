@@ -380,15 +380,16 @@
             column-gap: 30px; columns: 3;
         }
         .sa-slide ul li {
-            padding: 12px 15px; margin: 8px 0; border-radius: 10px;
+            padding: 16px 15px; margin: 8px 0; border-radius: 10px;
             background: rgba(240, 244, 255, .9); transition: all .3s ease; cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .08); break-inside: avoid;
             border-left: 3px solid transparent;
         }
         .sa-slide ul li:hover { background: rgba(26, 26, 46, .08); }
         .sa-slide ul li h3 { 
-            margin: 0; font-size: 17px; color: #1a1a2e; font-weight: 600;
+            margin: 0; font-size: 15px; color: #1a1a2e; font-weight: 600;
             display: flex; justify-content: space-between; align-items: center;
+            line-height: 1.4; min-height: 42px;
         }
         .sa-slide ul li h3::after {
             content: '+'; font-size: 16px; color: #1a1a2e; font-weight: 400;
@@ -409,13 +410,14 @@
             max-height: 50px; margin-top: 10px; padding-top: 10px;
             border-top: 1px solid rgba(26, 26, 46, .15);
         }
-        .sa-nav-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .sa-nav-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 25px; padding-top: 20px; border-top: 1px solid #e0e0e0; }
         .sa-nav-btn {
-            padding: 12px 25px; border: none; background: linear-gradient(45deg, #1a1a2e, #2d2d4a);
-            color: #fff; font-weight: 600; font-size: 16px; border-radius: 8px; cursor: pointer; transition: all .3s;
+            padding: 14px 30px; border: none; background: linear-gradient(45deg, #1a1a2e, #2d2d4a);
+            color: #fff; font-weight: 600; font-size: 16px; border-radius: 30px; cursor: pointer; transition: all .3s;
+            display: flex; align-items: center; gap: 8px;
         }
-        .sa-nav-btn:hover { transform: translateY(-2px); }
-        .sa-nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .sa-nav-btn:hover { transform: translateY(-2px); background: linear-gradient(45deg, #c41e3a, #a01830); }
+        .sa-nav-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; background: #999; }
         .sa-borough-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
         .sa-borough-tab {
             padding: 10px 20px; border: 2px solid var(--blue); background: transparent;
@@ -423,7 +425,13 @@
         }
         .sa-borough-tab:hover, .sa-borough-tab.active { background: var(--blue); color: white; }
         @media (max-width: 768px) { .sa-slide ul { columns: 2; } }
-        @media (max-width: 480px) { .sa-slide ul { columns: 1; } }
+        @media (max-width: 480px) { 
+            .sa-slide ul { columns: 1; padding: 15px; } 
+            .sa-slide ul li { padding: 14px 15px; }
+            .sa-slide ul li h3 { font-size: 16px; min-height: 24px; }
+            .sa-nav-buttons { gap: 15px; padding: 15px 0; }
+            .sa-nav-btn { padding: 14px 24px; font-size: 15px; border-radius: 25px; }
+        }
         /* Trust Badges Section */
         .trust-badges-section { padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
         .trust-badges-section h2 { text-align: center; margin-bottom: 30px; color: var(--blue); font-size: 28px; }
@@ -1451,8 +1459,8 @@
                             </div>
                         </div>
                         <div class="sa-nav-buttons">
-                            <button class="sa-nav-btn" id="saPrevBtn">← Previous</button>
-                            <button class="sa-nav-btn" id="saNextBtn">Next →</button>
+                            <button class="sa-nav-btn" id="saPrevBtn">◀ Previous Borough</button>
+                            <button class="sa-nav-btn" id="saNextBtn">Next Borough ▶</button>
                         </div>
                     </div>
                 </div>
@@ -1809,7 +1817,9 @@
             var totalSlides = 4;
             
             if (saToggleBtn) saToggleBtn.addEventListener('click', function() {
-                saDropdownContent.style.maxHeight = saDropdownContent.style.maxHeight && saDropdownContent.style.maxHeight !== '0px' ? '0' : '2000px';
+                var isOpen = saDropdownContent.style.maxHeight && saDropdownContent.style.maxHeight !== '0px';
+                saDropdownContent.style.maxHeight = isOpen ? '0' : '2000px';
+                saDropdownContent.style.overflow = isOpen ? 'hidden' : 'visible';
             });
             
             function updateSlider() {
