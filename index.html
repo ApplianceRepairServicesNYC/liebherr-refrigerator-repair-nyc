@@ -28,7 +28,7 @@
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Park Ave S",
+            "streetAddress": "401 Park Ave S",
             "addressLocality": "New York",
             "addressRegion": "NY",
             "addressCountry": "US"
@@ -328,6 +328,34 @@
         .content-scroll p { margin: 0 0 14px 0; }
         .content-scroll ul { margin: 0 0 15px 0; padding-left: 20px; }
         .content-scroll ul li { margin-bottom: 8px; list-style: disc; }
+        /* Borough Map Cards */
+        .borough-map-section { padding: 40px 20px; background: #f8f9fa; }
+        .borough-map-section h2 { font-size: 32px; text-align: center; color: var(--blue); margin-bottom: 10px; }
+        .borough-map-section > p { font-size: 16px; text-align: center; color: #555; margin-bottom: 30px; }
+        .borough-cards-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+            max-width: 900px; margin: 0 auto;
+        }
+        @media (max-width: 600px) { .borough-cards-grid { grid-template-columns: 1fr; } }
+        .borough-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 50%, #1a1a2e 100%);
+            border-radius: 16px; padding: 40px 30px; text-align: center;
+            box-shadow: 0 8px 32px rgba(26, 26, 46, .3);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .borough-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26, 26, 46, .4); }
+        .borough-card .pin-icon {
+            width: 40px; height: 50px; margin: 0 auto 20px;
+        }
+        .borough-card .pin-icon svg { width: 100%; height: 100%; }
+        .borough-card h3 { color: #fff; font-size: 24px; margin: 0 0 8px; font-weight: 700; }
+        .borough-card p { color: rgba(255,255,255,.8); font-size: 14px; margin: 0 0 20px; }
+        .borough-card .map-btn {
+            display: inline-block; padding: 12px 28px; background: #c41e3a; color: #fff;
+            text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 8px;
+            transition: background .3s, transform .3s;
+        }
+        .borough-card .map-btn:hover { background: #a01830; transform: scale(1.05); }
         /* Service Areas Section */
         #sa-service-areas {
             background: transparent; border: 2px solid #808080; border-radius: 12px;
@@ -1109,6 +1137,58 @@
 
     <section class="alt" id="contact">
         <div class="container">
+            <!-- Borough Map Cards -->
+            <section class="borough-map-section">
+                <h2>New York City Service Areas</h2>
+                <p>Proudly Serving 4 Boroughs with Same-Day Liebherr Refrigerator Repair</p>
+                <div class="borough-cards-grid">
+                    <div class="borough-card">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#c41e3a"/>
+                                <circle cx="12" cy="12" r="5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>Manhattan, NY</h3>
+                        <p>Serving All Manhattan Neighborhoods</p>
+                        <a href="https://www.google.com/maps/place/Manhattan,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View on Google Maps →</a>
+                    </div>
+                    <div class="borough-card">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#c41e3a"/>
+                                <circle cx="12" cy="12" r="5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>Brooklyn, NY</h3>
+                        <p>Serving All Brooklyn Neighborhoods</p>
+                        <a href="https://www.google.com/maps/place/Brooklyn,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View on Google Maps →</a>
+                    </div>
+                    <div class="borough-card">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#c41e3a"/>
+                                <circle cx="12" cy="12" r="5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>Queens, NY</h3>
+                        <p>Serving All Queens Neighborhoods</p>
+                        <a href="https://www.google.com/maps/place/Queens,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View on Google Maps →</a>
+                    </div>
+                    <div class="borough-card">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#c41e3a"/>
+                                <circle cx="12" cy="12" r="5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>The Bronx, NY</h3>
+                        <p>Serving All Bronx Neighborhoods</p>
+                        <a href="https://www.google.com/maps/place/Bronx,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View on Google Maps →</a>
+                    </div>
+                </div>
+            </section>
+
             <section id="sa-service-areas">
                 <h2>Service Areas – New York City</h2>
                 <p>We proudly serve <strong>Manhattan, Brooklyn, Queens and The Bronx</strong> with fast, reliable, same-day Liebherr refrigerator repair.</p>
@@ -1550,7 +1630,8 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h2>Liebherr Refrigerator Repair</h2>
-                    <p><strong>New York City, New York</strong></p>
+                    <p><strong>401 Park Ave S</strong></p>
+                    <p><strong>New York City, NY 10016</strong></p>
                     <p>Certified Liebherr refrigerator repair serving all of NYC. Same-day service available.</p>
                     <div class="footer-hours">
                         <p><strong>Business Hours</strong></p>
