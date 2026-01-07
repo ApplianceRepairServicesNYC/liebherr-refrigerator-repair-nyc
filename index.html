@@ -52,7 +52,7 @@
             --red: #c41e3a;
             --gray: #f8f9fa;
         }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             margin: 0;
@@ -61,6 +61,7 @@
             background: #fff;
             line-height: 1.6;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
         h1, h2, h3 { font-weight: 700; color: var(--blue); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
@@ -157,8 +158,10 @@
             .nav-right {
                 width: 100%;
                 justify-content: center;
-                gap: 15px;
+                gap: 10px;
             }
+            .services-btn { padding: 10px 16px; font-size: 14px; }
+            .nav-call-btn { padding: 10px 18px; font-size: 15px; }
         }
         @media (max-width: 480px) {
             .services-dropdown {
@@ -419,6 +422,8 @@
             .sa-slide ul { columns: 1; }
             .sa-nav-buttons { display: flex !important; padding: 20px 0; }
             .sa-nav-btn { padding: 12px 20px; font-size: 14px; }
+            .sa-borough-tabs { gap: 8px; padding: 0 10px; }
+            .sa-borough-tab { padding: 8px 14px; font-size: 13px; white-space: nowrap; }
         }
         /* Trust Badges Section */
         .trust-badges-section { padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
@@ -610,10 +615,14 @@
         .footer-hours { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-bottom { background: rgba(0,0,0,0.3); padding: 25px 0; text-align: center; }
         .footer-bottom-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .footer-bottom-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px 30px; margin-bottom: 15px; }
-        .footer-bottom-links a { color: #b0b0b0; text-decoration: none; font-size: 14px; transition: color .3s; }
+        .footer-bottom-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 20px; margin-bottom: 15px; }
+        .footer-bottom-links a { color: #b0b0b0; text-decoration: none; font-size: 14px; transition: color .3s; white-space: nowrap; }
         .footer-bottom-links a:hover { color: var(--red); }
         .footer-bottom p { margin: 8px 0; font-size: 14px; color: #888; }
+        @media (max-width: 480px) {
+            .footer-bottom-links { flex-direction: column; align-items: center; gap: 12px; }
+            .footer-bottom-links a { font-size: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -638,7 +647,7 @@
                         <li class="submenu-toggle" id="additionalToggle">Additional Services</li>
                         <div class="additional-submenu" id="additionalSubmenu">
                             <li>Installation and Maintenance</li>
-                            <li>Compressor and Refrigerant Service</li>
+                            <li class="modal-trigger" data-modal="compressorModal">Compressor and Refrigerant Service</li>
                             <li>Performance Optimization</li>
                             <li>Smart Home Connect Support</li>
                         </div>
@@ -1659,6 +1668,76 @@
         </div>
     </div>
 
+    <div class="modal-card" id="compressorModal">
+        <div class="modal-header">
+            <h2>Compressor & Refrigerant Service</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Professional Liebherr Compressor Repair and Replacement Services</strong></p>
+            <p>The compressor is the heart of your Liebherr refrigerator—a precision-engineered component that circulates refrigerant throughout the cooling system to maintain optimal temperatures. When your compressor fails or underperforms, your entire refrigeration system is compromised. At Liebherr Refrigerator Repair NYC, we specialize in professional compressor diagnostics, repair, and replacement services that restore your appliance to peak performance.</p>
+            
+            <h3>Why Choose Professional Compressor Service?</h3>
+            <p>Compressor repair is not a DIY project. Working with refrigeration systems requires specialized knowledge, EPA certification, and professional-grade equipment. Attempting compressor work without proper training can result in refrigerant leaks (which are harmful to the environment and illegal to vent), electrical hazards, voided warranties, and permanent damage to your expensive Liebherr appliance. Our factory-trained technicians have years of experience working specifically with Liebherr compressors and understand the unique engineering that makes these German-manufactured units exceptional.</p>
+            <p>Professional service also ensures accurate diagnostics. What appears to be a compressor failure may actually be a relay issue, thermostat malfunction, or electrical problem. Our technicians use advanced diagnostic equipment to pinpoint the exact cause of your refrigerator's issues before recommending any repairs, saving you money and preventing unnecessary part replacements.</p>
+            
+            <h3>Our Compressor Service Process</h3>
+            <p>Compressor service is labor-intensive work that requires meticulous attention to detail. A typical compressor replacement takes approximately 2 to 4 hours depending on your Liebherr model and the complexity of the installation. Here's what our comprehensive service includes:</p>
+            <ul>
+                <li><strong>Complete System Diagnosis:</strong> Before any work begins, we perform a thorough evaluation of your refrigerator's electrical system, thermostat, condenser coils, and refrigerant levels to confirm the compressor is the root cause</li>
+                <li><strong>Refrigerant Recovery:</strong> Using EPA-compliant recovery equipment, we safely extract all refrigerant from the system for proper recycling or reclamation</li>
+                <li><strong>Compressor Removal:</strong> The failed compressor is carefully disconnected from the refrigerant lines and electrical connections</li>
+                <li><strong>System Preparation:</strong> We clean and inspect all refrigerant lines, replace the filter-drier to remove moisture and contaminants, and prepare the system for the new compressor</li>
+                <li><strong>OEM Compressor Installation:</strong> Your new original Liebherr compressor is precisely installed with proper brazing techniques and secure electrical connections</li>
+                <li><strong>Vacuum and Leak Testing:</strong> The system is evacuated to remove air and moisture, then pressure-tested to ensure there are no leaks</li>
+                <li><strong>Refrigerant Charging:</strong> The exact manufacturer-specified amount of refrigerant is added to ensure optimal cooling performance</li>
+                <li><strong>Performance Verification:</strong> We monitor temperatures and system pressures to confirm everything is operating within Liebherr specifications</li>
+            </ul>
+            
+            <h3>Original Equipment Manufacturer (OEM) Parts Only</h3>
+            <p>At Liebherr Refrigerator Repair NYC, we exclusively use genuine Liebherr OEM compressors for all replacements. While aftermarket compressors may cost less initially, they often fail prematurely, operate inefficiently, and can void your appliance warranty. Liebherr compressors are engineered specifically for Liebherr refrigerators—they're designed to work with the precise refrigerant charges, evaporator sizes, and condenser configurations of your specific model. Using an original compressor ensures:</p>
+            <ul>
+                <li>Optimal energy efficiency and quiet operation</li>
+                <li>Proper cooling capacity for your refrigerator's size</li>
+                <li>Compatibility with Liebherr's BioFresh and other advanced technologies</li>
+                <li>Full warranty coverage on the replacement part</li>
+                <li>Extended appliance lifespan</li>
+            </ul>
+            
+            <h3>Types of Compressors in Modern Refrigeration</h3>
+            <p>Understanding compressor technology helps you appreciate the sophisticated engineering in your Liebherr refrigerator. Modern refrigerators use several types of compressors:</p>
+            <ul>
+                <li><strong>Reciprocating Compressors:</strong> The traditional design using a piston-and-cylinder mechanism to compress refrigerant. These are reliable and cost-effective but can be noisier than newer designs</li>
+                <li><strong>Rotary Compressors:</strong> Utilize rotating motion rather than pistons, offering quieter operation and improved efficiency. Common in many modern refrigerators</li>
+                <li><strong>Linear Compressors:</strong> Feature a piston driven directly by a linear motor without a crankshaft, reducing friction and energy consumption while providing precise temperature control</li>
+                <li><strong>Inverter Compressors:</strong> Variable-speed compressors that adjust their output based on cooling demand. Rather than cycling on and off, they run continuously at varying speeds, improving efficiency by up to 40% and maintaining more consistent temperatures</li>
+            </ul>
+            <p>Liebherr refrigerators typically feature advanced inverter compressor technology, which is why they're known for exceptional energy efficiency, whisper-quiet operation, and precise temperature stability. This sophisticated technology requires equally sophisticated service expertise.</p>
+            
+            <h3>Signs Your Compressor Needs Service</h3>
+            <p>Contact us immediately if you notice any of these warning signs:</p>
+            <ul>
+                <li>Refrigerator not cooling despite running constantly</li>
+                <li>Unusual clicking, buzzing, or humming sounds from the back of the unit</li>
+                <li>Compressor running hot to the touch</li>
+                <li>Refrigerator cycles on and off frequently (short cycling)</li>
+                <li>Higher than normal electricity bills</li>
+                <li>Warm condenser coils when the compressor should be running</li>
+            </ul>
+            
+            <h3>Refrigerant Service and Recharging</h3>
+            <p>In addition to compressor repair and replacement, we provide comprehensive refrigerant services. Low refrigerant levels are a common cause of poor cooling performance, but simply "topping off" refrigerant is rarely the solution—if your system is low on refrigerant, there's a leak somewhere that must be found and repaired. Our technicians use electronic leak detectors and UV dye testing to locate even the smallest leaks in evaporator coils, condenser coils, and refrigerant lines.</p>
+            <p>Once leaks are repaired, we evacuate the system to remove any air and moisture contamination, then recharge with the exact type and amount of refrigerant specified by Liebherr. Overcharging or undercharging refrigerant—even by a small amount—can dramatically reduce efficiency and shorten compressor life. Our precision charging ensures your Liebherr operates exactly as the engineers intended.</p>
+            
+            <h3>Understanding Repair vs. Replacement</h3>
+            <p>One of the most common questions we receive is whether to repair or replace a failing compressor. Several factors influence this decision. The age of your Liebherr is important—if your refrigerator is less than 8-10 years old, compressor replacement is usually worthwhile given the appliance's remaining useful life. The overall condition of the unit matters too; if other components are also failing, replacement of the entire appliance may make more financial sense. We always provide honest assessments and never recommend repairs that aren't in your best interest. Our goal is to help you make an informed decision that provides the best value for your situation.</p>
+            
+            <h3>Our Service Guarantee</h3>
+            <p>Every compressor service we perform comes with our comprehensive warranty covering both parts and labor. We stand behind our work because we know the quality of service we deliver. Our technicians treat your home with respect, clean up after every job, and take the time to explain exactly what was done and how to maximize your Liebherr's performance going forward. When you need compressor service, trust the specialists who know Liebherr refrigerators inside and out.</p>
+            <p style="margin-bottom: 20px;"></p>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-main">
             <div class="footer-grid">
@@ -1931,6 +2010,7 @@
             var privacyModal = document.getElementById('privacyModal');
             var termsModal = document.getElementById('termsModal');
             var epaModal = document.getElementById('epaModal');
+            var compressorModal = document.getElementById('compressorModal');
             
             function openModal(modalId) {
                 modalOverlay.classList.add('active');
@@ -1943,6 +2023,7 @@
                 privacyModal.classList.remove('active');
                 termsModal.classList.remove('active');
                 epaModal.classList.remove('active');
+                if (compressorModal) compressorModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
             
@@ -1951,6 +2032,9 @@
                 trigger.addEventListener('click', function(e) {
                     e.preventDefault();
                     var modalId = this.getAttribute('data-modal');
+                    // Close services dropdown if open
+                    var servicesMenu = document.getElementById('servicesMenu');
+                    if (servicesMenu) servicesMenu.classList.remove('active');
                     openModal(modalId);
                 });
             });
