@@ -1625,6 +1625,44 @@
         </div>
     </div>
 
+    <div class="modal-card" id="epaModal">
+        <div class="modal-header">
+            <h2>EPA Certification</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Environmental Protection Agency (EPA) Section 608 Certified</strong></p>
+            <p>At Liebherr Refrigerator Repair NYC, all of our technicians are fully certified under the Environmental Protection Agency's Section 608 regulations. This certification is not just a credential—it represents our commitment to protecting the environment, ensuring legal compliance, and delivering the highest standard of refrigerant handling during every repair we perform.</p>
+            
+            <h3>What is EPA Section 608 Certification?</h3>
+            <p>EPA Section 608 certification is a federal requirement established under the Clean Air Act. It mandates that any technician who maintains, services, repairs, or disposes of equipment containing refrigerants must be properly certified. This regulation exists to prevent the release of ozone-depleting substances and greenhouse gases into the atmosphere. Refrigerants such as R-134a, R-410A, R-404A, and older substances like R-22 can cause significant environmental damage if improperly handled or vented.</p>
+            
+            <h3>Types of EPA Certification We Hold</h3>
+            <p>EPA Section 608 certification is divided into four categories based on the type of equipment serviced. Our technicians hold Universal Certification, which encompasses all four types:</p>
+            <ul>
+                <li><strong>Type I:</strong> Small appliances containing 5 pounds or less of refrigerant, including household refrigerators, freezers, and window air conditioners</li>
+                <li><strong>Type II:</strong> High-pressure equipment such as residential air conditioning systems, heat pumps, and commercial refrigeration units</li>
+                <li><strong>Type III:</strong> Low-pressure equipment including large commercial chillers and industrial cooling systems</li>
+                <li><strong>Universal:</strong> Technicians certified to work on all types of refrigerant-containing equipment</li>
+            </ul>
+            <p>With Universal certification, our team is qualified to service any Liebherr refrigerator, wine cooler, or freezer regardless of the refrigerant type or system pressure classification.</p>
+            
+            <h3>Benefits of Choosing EPA-Certified Technicians</h3>
+            <p>When you choose Liebherr Refrigerator Repair NYC, you benefit from technicians who understand proper refrigerant recovery, recycling, and reclamation procedures. This expertise translates to:</p>
+            <ul>
+                <li><strong>Legal Compliance:</strong> Ensure your repair meets all federal regulations for refrigerant handling</li>
+                <li><strong>Environmental Responsibility:</strong> Proper handling prevents harmful substances from damaging the ozone layer and contributing to climate change</li>
+                <li><strong>System Longevity:</strong> Correct refrigerant charging ensures your Liebherr operates at peak efficiency for years to come</li>
+                <li><strong>Accurate Diagnostics:</strong> Certified technicians can properly identify refrigerant leaks and system issues</li>
+                <li><strong>Safe Repairs:</strong> Professional handling eliminates risks associated with refrigerant exposure</li>
+            </ul>
+            
+            <h3>Our Commitment to Excellence</h3>
+            <p>Beyond EPA certification, our technicians undergo continuous training on the latest Liebherr refrigeration technologies and environmentally responsible service practices. We use state-of-the-art refrigerant recovery equipment and maintain detailed records of all refrigerant transactions as required by federal law. When you trust us with your Liebherr refrigerator repair, you're choosing a company that prioritizes both exceptional service and environmental stewardship.</p>
+            <p style="margin-bottom: 20px;"></p>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-main">
             <div class="footer-grid">
@@ -1666,6 +1704,7 @@
                     <a href="#cf-schedule-container" class="scroll-link">Schedule Service</a>
                     <a href="#" class="modal-trigger" data-modal="privacyModal">Privacy Policy</a>
                     <a href="#" class="modal-trigger" data-modal="termsModal">Terms of Service</a>
+                    <a href="#" class="modal-trigger" data-modal="epaModal">EPA Certification</a>
                 </div>
                 <p>© 2025 Liebherr Refrigerator Repair NYC. All Rights Reserved.</p>
                 <p>Licensed and Insured • Factory Certified Technicians • Same-Day Service Available</p>
@@ -1888,6 +1927,7 @@
             var modalOverlay = document.getElementById('modalOverlay');
             var privacyModal = document.getElementById('privacyModal');
             var termsModal = document.getElementById('termsModal');
+            var epaModal = document.getElementById('epaModal');
             
             function openModal(modalId) {
                 modalOverlay.classList.add('active');
@@ -1899,6 +1939,7 @@
                 modalOverlay.classList.remove('active');
                 privacyModal.classList.remove('active');
                 termsModal.classList.remove('active');
+                epaModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
             
